@@ -1,0 +1,15 @@
+<div class="container mt-6 szelesseg">
+    {% for x in range(8) %}
+    <div class="columns">
+        {% for y in range(8) %} {% if x % 2 == y % 2 %}
+        <div class="column feher" id="mezo-{{ y+(x*8) }}" onclick="mezoValaszt({{ y+(x*8) }})">
+            {% else %}
+            <div class="column zold" id="mezo-{{ y+(x*8) }}" onClick="mezoValaszt({{ y+(x*8) }})">
+                {% endif %}
+                <img class="image is-48x48 m-auto" src="{{ url_for('static', filename=data[y+(x*8)]) }}">
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
