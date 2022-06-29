@@ -47,3 +47,6 @@ def game():
 @app.route("/tabla")
 def tabla():
 	return render_template('tabla.html', data=atalakito(beolvas("lepesek.txt")))
+
+if __name__ == "__main__":
+    app.run(debug=True)
